@@ -6,7 +6,8 @@ nro = Number(
   )
 );
 
-let numerosIngresados: number[] = new Array(nro);
+let numeros1: number[] = new Array(nro);
+let numeros2: number[] = new Array(nro);
 
 function cargarVector(v: number[], cantidad: number) {
   let indice: number;
@@ -16,10 +17,10 @@ function cargarVector(v: number[], cantidad: number) {
 }
 
 function invertirVector(v: number[], cantidad: number) {
-  let indice: number;
+  let indice: number = 1;
   let indiceInvertido: number = 0;
-
   let arrayInvertido: number[] = new Array(cantidad);
+
   for (
     indiceInvertido = cantidad - 1;
     indiceInvertido > -1;
@@ -44,6 +45,17 @@ function mostrarVertor(v: number[], cantidad: number) {
   }
 }
 
-cargarVector(numerosIngresados, nro);
-invertirVector(numerosIngresados, nro);
+function CalcularProducto(v1: number[], v2: number[]): number {
+  let cantidad: number = v1.length - 1;
+  let EscalarProducto: number = 0;
+  for (let indice = 0; indice < cantidad; indice++) {
+    EscalarProducto = EscalarProducto + v1[indice] * v2[indice];
+  }
+  return EscalarProducto;
+}
+
+cargarVector(numeros1, nro);
+cargarVector(numeros2, nro);
+//invertirVector(numerosIngresados, nro);
 //mostrarVertor(numerosIngresados, numerosIngresados.length);
+console.log("resultado: ", CalcularProducto(numeros1, numeros2));
